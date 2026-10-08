@@ -60,7 +60,8 @@ def main():
     PLIST.parent.mkdir(parents=True, exist_ok=True)
     definition = {
         'Label': LABEL,
-        'ProgramArguments': [str(Path(sys.executable).resolve()), str(TARGET / 'reminder.py')],
+        # Preserve Homebrew's stable symlink instead of pinning a Cellar version.
+        'ProgramArguments': [os.path.abspath(sys.executable), str(TARGET / 'reminder.py')],
         'StartInterval': args.interval_hours * 3600,
         'RunAtLoad': True,
         'ProcessType': 'Background',
