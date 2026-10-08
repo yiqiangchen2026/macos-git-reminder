@@ -1,0 +1,7 @@
+{
+  "repositories": [
+    {"name": "My project", "path": "~/Projects/my-project"}
+  ],
+  "quiet_hours": [22, 9],
+  "timezone": null
+}
